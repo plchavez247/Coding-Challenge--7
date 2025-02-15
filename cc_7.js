@@ -40,3 +40,11 @@ console.log(calculateShippingCost(10,"USA", true));
 console.log(calculateShippingCost(5, "Canada", false));// log it to the console
 
 //Task 5
+ function calculateLoanInterest(principal, rate, years) {// writing the function
+    let interest = principal * rate * years  // using the given forumla for interest 
+    return `Total Interest: $${interest.toFixed(2)}`;//return the total interest rounded to decimal places
+    
+ };
+
+ console.log(calculateLoanInterest(1000, 0.05, 3));
+ console.log(calculateLoanInterest(5000, 0.07, 5)); //log it to the console
