@@ -48,3 +48,14 @@ console.log(calculateShippingCost(5, "Canada", false));// log it to the console
 
  console.log(calculateLoanInterest(1000, 0.05, 3));
  console.log(calculateLoanInterest(5000, 0.07, 5)); //log it to the console
+
+ //Task 6 
+
+ let transactions = [500, 1200, 3000, 800, 2200];
+ function filterHighValueTransactions(transactions, filterFunction){ //creating the function
+    return transactions.filter(amount => amount > 1000);//filtering through the array and return the amounts greater than $1000 
+ };
+
+ console.log(filterHighValueTransactions(transactions));// log it to the conols
+
+ 
