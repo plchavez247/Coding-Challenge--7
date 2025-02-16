@@ -49,7 +49,7 @@ console.log(calculateShippingCost(5, "Canada", false));// log it to the console
  console.log(calculateLoanInterest(1000, 0.05, 3));
  console.log(calculateLoanInterest(5000, 0.07, 5)); //log it to the console
 
- //Task 6 
+ //Task 6: Higher-Order Functions
 
  let transactions = [500, 1200, 3000, 800, 2200];
  function filterHighValueTransactions(transactions, filterFunction){ //creating the function
@@ -58,4 +58,16 @@ console.log(calculateShippingCost(5, "Canada", false));// log it to the console
 
  console.log(filterHighValueTransactions(transactions));// log it to the conols
 
- 
+ //Task 7: Closures
+ function createBudgetTracker(){
+    let balance = 0; // this will store the total amount of money spent
+    return function(expense){
+        balance -= expense; //subtracting the expense from the balance
+        console.log(`Current Balance: -$${balance}`); // since we're tracking expenses it is going to be a - in the template literal
+
+    };
+ };
+
+ let budget = createBudgetTracker();
+ budget(300);
+ budget(200); //using test data to get expected output
