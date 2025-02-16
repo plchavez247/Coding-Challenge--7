@@ -18,7 +18,7 @@ const calculateHourlyWage = function(salary, hoursPerWeek) {
 calculateHourlyWage(52000, 40);
 
 
-//Task 3: 
+//Task 3: Arrow function
 const calculateLoyaltyDiscount= (amount,years) => { //arrow function named calculateLoyaltyDiscount
     let discountRate = years >= 5 ? amount * 0.15: years >= 3 ? amount * 0.10 : 0.05;// ternary operator creates a shorter way to decide how much discount to give
     let discountedPrice = amount * (1- discountRate);// formula for discount
@@ -39,7 +39,7 @@ let calculateShippingCost= (weight, location, expedited = false) =>{
 console.log(calculateShippingCost(10,"USA", true));
 console.log(calculateShippingCost(5, "Canada", false));// log it to the console
 
-//Task 5
+//Task 5: Returning Values
  function calculateLoanInterest(principal, rate, years) {// writing the function
     let interest = principal * rate * years  // using the given forumla for interest 
     return `Total Interest: $${interest.toFixed(2)}`;//return the total interest rounded to decimal places
