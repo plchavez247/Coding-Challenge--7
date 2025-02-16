@@ -1,1 +1,1 @@
-This is my submisson for coding challenege #7
+This is my submission for coding challenge #7

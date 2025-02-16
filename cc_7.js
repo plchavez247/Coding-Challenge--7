@@ -65,7 +65,7 @@ console.log(calculateShippingCost(5, "Canada", false));// log it to the console
     let balance = 0; // this will store the total amount of money spent
     return function(expense){
         balance -= expense; //subtracting the expense from the balance
-        console.log(`Current Balance: -$${balance}`); // since we're tracking expenses it is going to be a - in the template literal
+        console.log(`Current Balance: $${balance}`); // logging the balance
 
     };
  };
