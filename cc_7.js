@@ -33,8 +33,8 @@ console.log(calculateLoyaltyDiscount(200, 2));// log it to the console
 
 //Task 4: Parameters and Arguments
 let calculateShippingCost= (weight, location, expedited = false) =>{
-    let Cost = location === "USA" ? 5 + (0.5 * weight) : 10 + (0.7 * weight);// if the location is USA then its $5 + $0.5 or else its just cananda and its $10 + $0.7
-    let total = expedited ? Cost + 10 : cost; // we take the total and if expedited shipping is true then its the cost + 10 or else its just the original cost
+    let cost = location === "USA" ? 5 + (0.5 * weight) : 10 + (0.7 * weight);// if the location is USA then its $5 + $0.5 or else its just cananda and its $10 + $0.7
+    let total = expedited ? cost + 10 : cost; // we take the total and if expedited shipping is true then its the cost + 10 or else its just the original cost
     return `Shipping Cost: $${total.toFixed(2)}`;// then we use template literal to inside to get it to look like the test data output
 };
 
@@ -58,7 +58,7 @@ console.log(calculateShippingCost(5, "Canada", false));// log it to the console
     return transactions.filter(filterFunction);//filtering through the array and return the amounts greater than $1000 
  };
 
- console.log(filterHighValueTransactions(transactions, amount => amount > 1000));// log it to the conols
+ console.log(filterHighValueTransactions(transactions, amount => amount > 1000));// log it to the console
 
  //Task 7: Closures
  function createBudgetTracker(){
