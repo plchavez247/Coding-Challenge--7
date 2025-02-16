@@ -71,3 +71,18 @@ console.log(calculateShippingCost(5, "Canada", false));// log it to the console
  let budget = createBudgetTracker();
  budget(300);
  budget(200); //using test data to get expected output
+
+ //Task 8:Recursion in JavaScript
+
+ function calculateGrowth(years, revenue) {
+    if (years >= 10) { //when years are 10 or greater we return revenue
+        return revenue.toFixed(2); //this returns the revenue rounded to decimal places
+    }
+    return calculateGrowth(years + 1, revenue * 1.05);//using recursion to calculate revenue growth
+    };
+
+    console.log(`Projected Revenue: $${calculateGrowth(8, 1000)}`);
+    console.log(`Projected Revenue: $${calculateGrowth(5, 5000)}`); //using template literal to get "Projected Revenue:"
+
+
+ 
