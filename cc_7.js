@@ -1,28 +1,30 @@
 //Task 1: Function Declaration
 
 function calculateInvoice(subtotal, taxRate, discount) {
-    let total = (subtotal + (subtotal * taxRate)) - discount;
-    console.log (total);
+    let total = (subtotal + (subtotal * taxRate)) - discount;// using formula to calculate final invoice amount
+    console.log (`Total Invoice: $${total.toFixed(2)}`);//using to fixed to round total
 };
 
 calculateInvoice(100, 0.08, 5);
+calculateInvoice(500, 0.1, 20);
 
 
 //Task 2: Function Expression
 
 const calculateHourlyWage = function(salary, hoursPerWeek) {
-    let hourlyWage = salary / (hoursPerWeek * 52)
-    console.log("Hourly Wage:$" , {hourlyWage});
+    let hourlyWage = salary / (hoursPerWeek * 52)// using formula to calculate hourly wage
+    console.log(`Hourly Wage: $${hourlyWage.toFixed(2)}`);//using to fixed to round hourlywage
 };
 
 calculateHourlyWage(52000, 40);
+calculateHourlyWage(75000, 35);
 
 
 //Task 3: Arrow function
 const calculateLoyaltyDiscount= (amount,years) => { //arrow function named calculateLoyaltyDiscount
-    let discountRate = years >= 5 ? amount * 0.15: years >= 3 ? amount * 0.10 : 0.05;// ternary operator creates a shorter way to decide how much discount to give
+    let discountRate = years >= 5 ? 0.15: years >= 3 ? 0.10 : 0.05;// ternary operator creates a shorter way to decide how much discount to give
     let discountedPrice = amount * (1- discountRate);// formula for discount
-    return `Discounted Price: $${discounteddPrice.tofixed(2)}`;// return the string using a template literal to get the results like the test data
+    return `Discounted Price: $${discountedPrice.toFixed(2)}`;// return the string using a template literal to get the results like the test data
 
 };
 
@@ -31,9 +33,9 @@ console.log(calculateLoyaltyDiscount(200, 2));// log it to the console
 
 //Task 4: Parameters and Arguments
 let calculateShippingCost= (weight, location, expedited = false) =>{
-    let Cost = location === "USA" ? 5 + (0.5 * pounds) : 10 + (0.7 * pounds);// if the location is USA then its $5 + $0.5 or else its just cananda and its $10 + $0.7
-    let total = expedited ? Cost + 10 : Cost; // we take the total and if expedited shipping is true then its the cost + 10 or else its just the original cost
-    return `Shipping Cost: $${totalCost.toFixed(2)}`;// then we use template literal to inside to get it to look like the test data output
+    let Cost = location === "USA" ? 5 + (0.5 * weight) : 10 + (0.7 * weight);// if the location is USA then its $5 + $0.5 or else its just cananda and its $10 + $0.7
+    let total = expedited ? Cost + 10 : cost; // we take the total and if expedited shipping is true then its the cost + 10 or else its just the original cost
+    return `Shipping Cost: $${total.toFixed(2)}`;// then we use template literal to inside to get it to look like the test data output
 };
 
 console.log(calculateShippingCost(10,"USA", true));
@@ -53,10 +55,10 @@ console.log(calculateShippingCost(5, "Canada", false));// log it to the console
 
  let transactions = [500, 1200, 3000, 800, 2200];
  function filterHighValueTransactions(transactions, filterFunction){ //creating the function
-    return transactions.filter(amount => amount > 1000);//filtering through the array and return the amounts greater than $1000 
+    return transactions.filter(filterFunction);//filtering through the array and return the amounts greater than $1000 
  };
 
- console.log(filterHighValueTransactions(transactions));// log it to the conols
+ console.log(filterHighValueTransactions(transactions, amount => amount > 1000));// log it to the conols
 
  //Task 7: Closures
  function createBudgetTracker(){
@@ -75,7 +77,7 @@ console.log(calculateShippingCost(5, "Canada", false));// log it to the console
  //Task 8:Recursion in JavaScript
 
  function calculateGrowth(years, revenue) {
-    if (years >= 10) { //when years are 10 or greater we return revenue
+    if (years >= 10) { //when years are 10 or greater we return revenue because it will go until we reach 10 or greater
         return revenue.toFixed(2); //this returns the revenue rounded to decimal places
     }
     return calculateGrowth(years + 1, revenue * 1.05);//using recursion to calculate revenue growth
